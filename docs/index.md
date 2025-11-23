@@ -169,16 +169,6 @@ pip install reflexio
 
 - [Usage Guide](usage.md)
 - [Observability & Metrics](observability.md)
-- [Examples & Snippets](snippets/)
-
-# Snippets & Examples
-
-- [pyodbc_classifier.py](pyodbc_classifier.py)
-- [async_worker_retry.py](async_worker_retry.py)
-- [decorator_retry.py](decorator_retry.py)
-- [fastapi_downstream.py](fastapi_downstream.py)
-- [httpx_async_retry.py](httpx_async_retry.py)
-- [httpx_sync_retry.py](httpx_sync_retry.py)
 
 ---
 
