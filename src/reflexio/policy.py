@@ -6,7 +6,7 @@ import functools
 import time
 from collections.abc import Awaitable, Callable, Mapping
 from datetime import UTC, datetime, timedelta
-from typing import Any, ParamSpec, TypeVar, overload
+from typing import Any, ParamSpec, TypeVar, cast
 
 from .config import RetryConfig
 from .errors import ErrorClass
@@ -437,40 +437,6 @@ class AsyncRetryPolicy(_BaseRetryPolicy):
         raise RuntimeError("Retry attempts exhausted with no captured exception")
 
 
-@overload
-def retry(
-    *,
-    classifier: ClassifierFn,
-    strategy: StrategyFn | None = ...,
-    strategies: Mapping[ErrorClass, StrategyFn] | None = ...,
-    deadline_s: float = ...,
-    max_attempts: int = ...,
-    max_unknown_attempts: int | None = ...,
-    per_class_max_attempts: Mapping[ErrorClass, int] | None = ...,
-    on_metric: MetricHook | None = ...,
-    on_log: LogHook | None = ...,
-    operation: str | None = ...,
-) -> Callable[[Callable[P, T]], Callable[P, T]]:
-    ...
-
-
-@overload
-def retry(
-    *,
-    classifier: ClassifierFn,
-    strategy: StrategyFn | None = ...,
-    strategies: Mapping[ErrorClass, StrategyFn] | None = ...,
-    deadline_s: float = ...,
-    max_attempts: int = ...,
-    max_unknown_attempts: int | None = ...,
-    per_class_max_attempts: Mapping[ErrorClass, int] | None = ...,
-    on_metric: MetricHook | None = ...,
-    on_log: LogHook | None = ...,
-    operation: str | None = ...,
-) -> Callable[[Callable[P, Awaitable[T]]], Callable[P, Awaitable[T]]]:
-    ...
-
-
 def retry(
     *,
     classifier: ClassifierFn,
@@ -512,12 +478,13 @@ def retry(
 
             @functools.wraps(func)
             async def async_wrapper(*args: P.args, **kwargs: P.kwargs) -> T:
-                return await async_policy.call(
+                result = await async_policy.call(
                     lambda: func(*args, **kwargs),
                     on_metric=on_metric,
                     on_log=on_log,
                     operation=op_name,
                 )
+                return cast(T, result)
 
             return async_wrapper  # type: ignore[return-value]
 
@@ -533,12 +500,13 @@ def retry(
 
         @functools.wraps(func)
         def wrapper(*args: P.args, **kwargs: P.kwargs) -> T:
-            return policy.call(
+            result = policy.call(
                 lambda: func(*args, **kwargs),
                 on_metric=on_metric,
                 on_log=on_log,
                 operation=op_name,
             )
+            return cast(T, result)
 
         return wrapper
 
