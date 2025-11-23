@@ -1,0 +1,21 @@
+site_name: Reflexio
+site_description: Composable retry policies with pluggable classifiers and jitter strategies.
+repo_url: https://github.com/aponysus/reflexio
+theme:
+  name: material
+  features:
+    - navigation.sections
+nav:
+  - Home: docs/index.md
+  - Usage: docs/usage.md
+  - Observability: docs/observability.md
+  - Design Notes: docs/design_notes.md
+  - Recipes: docs/recipes.md
+  - Snippets:
+      - HTTPX (sync): docs/snippets/httpx_sync_retry.py
+      - HTTPX (async): docs/snippets/httpx_async_retry.py
+      - Async worker: docs/snippets/async_worker_retry.py
+      - Decorator: docs/snippets/decorator_retry.py
+      - FastAPI proxy: docs/snippets/fastapi_downstream.py
+      - PyODBC classifier: docs/snippets/pyodbc_classifier.py
+      - PyODBC retry: docs/snippets/pyodbc_retry.py

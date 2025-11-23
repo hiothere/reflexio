@@ -183,6 +183,11 @@ uv run pytest
 - FastAPI proxy with metrics counter: `uv pip install "fastapi[standard]" httpx` then `uv run uvicorn docs.snippets.fastapi_downstream:app --reload`
 - PyODBC + SQLSTATE classification example: `uv pip install pyodbc` then `uv run python docs/snippets/pyodbc_retry.py`
 
+## Docs site
+
+- Build/serve locally: `uv pip install .[docs]` then `uv run mkdocs serve`
+- Pages: `docs/index.md`, `docs/usage.md`, `docs/observability.md`, `docs/recipes.md` with runnable snippets in `docs/snippets/`.
+
 ## Versioning
 
 Semantic Versioning.

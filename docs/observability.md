@@ -54,6 +54,23 @@ policy.call(
 
 Meter counter should support `.add(1, attributes=attributes)`.
 
+## Testing hooks
+
+Quick pattern to assert hooks fire without needing real backends:
+
+```python
+events = []
+
+def metric(event, attempt, sleep_s, tags):
+    events.append((event, attempt, sleep_s, tags))
+
+policy.call(work, on_metric=metric, operation="op")
+
+assert any(e[0] == "retry" for e in events)
+```
+
+You can use the same shape for log hooks; ensure tests avoid networked backends and use local spies instead.
+
 ## Alerting ideas
 
 - Rising `retry` or `max_attempts_exceeded` for `RATE_LIMIT`/`SERVER_ERROR` -> backoff/circuit breaker tuning.

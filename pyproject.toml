@@ -14,9 +14,14 @@ dependencies = []
 dev = [
     "pytest>=9.0.1",
     "pytest-cov>=7.0.0",
+    "hypothesis>=6.99.0",
     "mypy>=1.10.0",
     "ruff>=0.6.0",
     "types-setuptools",
+]
+docs = [
+    "mkdocs>=1.6.0",
+    "mkdocs-material>=9.5.0",
 ]
 
 [tool.uv]
