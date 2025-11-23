@@ -176,6 +176,7 @@ uv run pytest
 - Async worker loop with retries: `uv run python docs/snippets/async_worker_retry.py`
 - Decorator usage (sync + async): `uv run python docs/snippets/decorator_retry.py`
 - FastAPI proxy with metrics counter: `uv pip install "fastapi[standard]" httpx` then `uv run uvicorn docs.snippets.fastapi_downstream:app --reload`
+- PyODBC + SQLSTATE classification example: `uv pip install pyodbc` then `uv run python docs/snippets/pyodbc_retry.py`
 
 ## Versioning
 

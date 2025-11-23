@@ -2,7 +2,7 @@
 Simulated async worker that retries processing messages.
 
 Run with:
-    uv run python examples/async_worker_retry.py
+    uv run python docs/snippets/async_worker_retry.py
 """
 
 from __future__ import annotations
@@ -23,7 +23,7 @@ def build_policy() -> AsyncRetryPolicy:
     return AsyncRetryPolicy(
         classifier=default_classifier,
         strategy=decorrelated_jitter(max_s=1.0),
-        strategies={ErrorClass.RATE_LIMIT: decorrelated_jitter(min_s=0.2, max_s=2.0)},
+        strategies={ErrorClass.RATE_LIMIT: decorrelated_jitter(base_s=0.2, max_s=2.0)},
         deadline_s=5.0,
         max_attempts=4,
     )

@@ -3,7 +3,7 @@ Async httpx example using AsyncRetryPolicy.
 
 Run with:
     uv pip install httpx
-    uv run python examples/httpx_async_retry.py
+    uv run python docs/snippets/httpx_async_retry.py
 """
 
 from __future__ import annotations
@@ -27,7 +27,7 @@ def build_policy() -> AsyncRetryPolicy:
         classifier=default_classifier,
         strategy=decorrelated_jitter(max_s=2.0),
         strategies={
-            ErrorClass.RATE_LIMIT: decorrelated_jitter(min_s=1.0, max_s=8.0),
+            ErrorClass.RATE_LIMIT: decorrelated_jitter(base_s=1.0, max_s=8.0),
         },
         deadline_s=10.0,
         max_attempts=5,
