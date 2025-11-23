@@ -8,7 +8,7 @@ Adapt the mappings to your environment (SQL Server/Postgres) and driver behavior
 from __future__ import annotations
 
 import re
-from typing import Iterable
+from collections.abc import Iterable
 
 from reflexio.errors import ErrorClass
 
