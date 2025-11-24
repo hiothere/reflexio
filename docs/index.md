@@ -14,9 +14,9 @@ def fetch_user():
 
 Async uses the same decorator, or `AsyncRetryPolicy` directly.
 
-## What’s inside
+## Where to go next
 
-- [Usage](usage.md) – policies, decorators, strategies, deadlines, hooks.
-- [Observability](observability.md) – metric/log hook contracts and patterns.
-- [Recipes](recipes.md) – HTTPX, async workers, pyodbc SQLSTATE classifier, FastAPI proxy.
-- Snippets in `docs/snippets/` back the recipes and can be run with `uv run ...`.
+- [Getting started](getting-started.md) – install and first examples.
+- [Concepts](concepts/error-classes.md) – error classes, strategies, policies, decorators.
+- [Observability](observability.md) – metrics/log hooks and patterns.
+- [Examples](examples/index.md) – runnable snippets for HTTP, DB, workers, FastAPI, benchmarks.

@@ -1,0 +1,13 @@
+# Changelog
+
+See project root `CHANGELOG.md` for full details.
+
+## [0.2.0] - 2025-12-01
+### Added
+- `retry` decorator for wrapping sync and async callables with RetryPolicy/AsyncRetryPolicy.
+- Decorator usage example script and README updates.
+- Usage docs covering decorator-based retries.
+
+## [0.1.0] - 2025-11-23
+### Added
+- Initial functional version of `reflexio` with error classification, RetryPolicy with deadlines/per-class limits/hooks, jitter strategies, and metrics/logging adapters.
