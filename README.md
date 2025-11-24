@@ -9,6 +9,11 @@
 Composable, low-overhead retry policies with **pluggable classification**, **per-class backoff strategies**, and **structured observability hooks**.  
 Designed for services that need predictable retry behavior and clean integration with metrics/logging.
 
+## Documentation
+
+- Site: https://aponysus.github.io/reflexio/
+- Getting started: https://aponysus.github.io/reflexio/getting-started/
+
 ## Installation
 
 From PyPI:
