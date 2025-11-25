@@ -10,6 +10,8 @@ Classifier-driven retries with per-class backoff and structured hooks for Python
 - **Deterministic envelopes:** Deadlines, max attempts, and caps for unknown errors.
 - **Best-effort observability:** Metric/log hooks that never break workloads.
 
+[More background here](blog/why-reflexio.md)
+
 ## Quick start
 
 ```python
